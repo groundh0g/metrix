@@ -1,2 +1,3 @@
 # metrix
-Tinkering with `IHttpModule`s.
+
+Tinkering with `IHttpModule` to create a custom HTTP module.
