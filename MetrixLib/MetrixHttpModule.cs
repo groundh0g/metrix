@@ -77,17 +77,18 @@ namespace MetrixWeb
 
         private void SerializeData(HttpApplication application, MetrixRequestData data)
         {
-            // Write to HTML footer
+            // Write to HTML footer (TODO: make configurable)
             GetResponse(application).Write(string.Format("<hr/><pre>{0}</pre><hr/>", data.Display.Replace("\n", "<br/>")));
             
-            // Write to console
+            // Write to console (TODO: make configurable)
             System.Diagnostics.Debug.WriteLine("-----------------");
             System.Diagnostics.Debug.WriteLine(data.Display);
             System.Diagnostics.Debug.WriteLine("-----------------");
             
-            // TODO: Write to EventLog (configurable)
-            // TODO: Write to Database (configurable)
-            // TODO: Write to WebAPI (configurable)
+            // TODO: Write to NLog (make configurable)
+            // TODO: Write to EventLog (make configurable)
+            // TODO: Write to Database (make configurable)
+            // TODO: Write to WebAPI (make configurable)
             // ...
         }
         

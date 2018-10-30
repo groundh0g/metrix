@@ -1,19 +1,22 @@
 using System;
-using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace MetrixWeb
 {
     public class MetrixRequestData
     {
-        public Guid RequestGuid { get; set; }
         public long StartRequest { get; set; }
         public long StartRequestWork { get; set; }
         public long EndRequestWork { get; set; }
         public long EndRequest { get; set; }
+        
+        public Guid RequestGuid { get; set; }
         public string RawUrl { get; set; }
         public string ResponseStatus { get; set; }
         public long OutputLength { get; set; }
+
+        public static long MinimumMillis { get; set; }
+        public static long MaximumMillis { get; set; }
 
         public static long TotalMillis { get; set; }
         public static long TotalFrames { get; set; }
@@ -25,11 +28,16 @@ namespace MetrixWeb
             {
                 // skip the "first run" frame times, they're artificially high
                 skipFrame = false;
+                MinimumMillis = long.MaxValue;
+                MaximumMillis = long.MinValue;
             }
             else
             {
-                MetrixRequestData.TotalMillis += data.EndRequest - data.StartRequest;
+                var elapsed = data.EndRequest - data.StartRequest;
+                MetrixRequestData.TotalMillis += elapsed;
                 MetrixRequestData.TotalFrames++;
+                MetrixRequestData.MinimumMillis = Math.Min(MetrixRequestData.MinimumMillis, elapsed);
+                MetrixRequestData.MaximumMillis = Math.Max(MetrixRequestData.MaximumMillis, elapsed);
             }
         }
 
@@ -61,6 +69,8 @@ namespace MetrixWeb
                     .Append("  RequestDuration: ").AppendLine(RequestDuration.ToString() + " seconds")
                     .Append("  OverheadDuration: ").AppendLine(OverheadDuration.ToString() + " seconds")
                     .Append("  AverageDuration: ").AppendLine((new TimeSpan(TotalMillis).TotalSeconds / Math.Max(1.0, TotalFrames)).ToString() + " seconds")
+                    .Append("  MinimumDuration: ").AppendLine((new TimeSpan(MinimumMillis).TotalSeconds.ToString() + " seconds"))
+                    .Append("  MaximumDuration: ").AppendLine((new TimeSpan(MaximumMillis).TotalSeconds.ToString() + " seconds"))
                     .Append("  RawUrl: ").AppendLine(RawUrl)
                     .Append("  ResponseStatus: ").AppendLine(ResponseStatus)
                     .Append("  OutputLength: ").AppendLine(OutputLength.ToString())
