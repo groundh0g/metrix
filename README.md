@@ -8,11 +8,11 @@ Tinkering with `IHttpModule` to create a custom HTTP module that measures certai
 
 - [X] Create a new IHttpModule
 - [X] Log collected page metrics to the page output
-- [ ] Measure:
+- [X] Measure:
   - [X] Total time processing page
   - [X] Overhead of the custom handler
   - [X] Size of the response (in bytes)
-  - [ ] Average, min, and max responses seen
+  - [X] Average, min, and max responses seen
 - [ ] Provide script to install the custom module to all applications on IIS
 - [X] Provide support for CI
   - [X] Vendor Appveyor (for Windows support)
