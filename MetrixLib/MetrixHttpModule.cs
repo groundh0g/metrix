@@ -25,9 +25,6 @@ namespace MetrixWeb
         {
             context.BeginRequest += ContextOnBeginRequest;
             context.EndRequest += ContextOnEndRequest;
-
-            var response = GetResponse(context);
-            response.Filter = CountingStream = new CountingStream(response.Filter);
         }
 
         public void ContextOnBeginRequest(object sender, EventArgs e)
@@ -39,6 +36,9 @@ namespace MetrixWeb
                 var data = new MetrixRequestData();
                 var request = GetRequest(sender);
                 var context = GetContext(sender);
+
+                var response = GetResponse(sender);
+                response.Filter = CountingStream = new CountingStream(response.Filter);
 
                 data.RequestGuid = Guid.NewGuid();
                 data.StartRequest = startRequest;

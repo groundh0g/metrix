@@ -1,10 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2041
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetrixWeb", "MetrixWeb\MetrixWeb.csproj", "{0F1B747D-22EE-402E-89A3-31509B3BE941}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetrixTests", "MetrixTests\MetrixTests.csproj", "{36E079D1-4034-4177-948B-5CC7EA10E194}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetrixLib", "MetrixLib\MetrixLib.csproj", "{78AFE670-E1B0-48E2-9884-4C49F23E1667}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixTests2", "MatrixTests2\MatrixTests2.csproj", "{5ACF81FF-436B-405E-B813-D9B7140A6373}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetrixWeb2", "MetrixWeb2\MetrixWeb2.csproj", "{9EC7F9A7-F5A9-4B76-8542-7991C01557FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +31,19 @@ Global
 		{78AFE670-E1B0-48E2-9884-4C49F23E1667}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78AFE670-E1B0-48E2-9884-4C49F23E1667}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78AFE670-E1B0-48E2-9884-4C49F23E1667}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ACF81FF-436B-405E-B813-D9B7140A6373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ACF81FF-436B-405E-B813-D9B7140A6373}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ACF81FF-436B-405E-B813-D9B7140A6373}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ACF81FF-436B-405E-B813-D9B7140A6373}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EC7F9A7-F5A9-4B76-8542-7991C01557FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EC7F9A7-F5A9-4B76-8542-7991C01557FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EC7F9A7-F5A9-4B76-8542-7991C01557FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EC7F9A7-F5A9-4B76-8542-7991C01557FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6397455E-C632-4F13-AF84-D11FFDD13279}
 	EndGlobalSection
 EndGlobal
